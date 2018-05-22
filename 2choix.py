@@ -66,7 +66,7 @@ def Somme2(morpion2):
 			if somme2 == -3:
 				return -1
 
-	somme2 = morpion2[0][0] + morpion2[1][1] + morpion2[2][2]# + morpion[3][3]  
+	somme2 = morpion2[0][0] + morpion2[1][1] + morpion2[2][2]# + morpion[3][3]
 
 	if somme2 == 3:
 		return 1
@@ -78,7 +78,7 @@ def Somme2(morpion2):
 		return 1
 	if somme2 == -3:
 		return -1
-   
+
 	somme2 = morpion2[1][3] + morpion2[2][2] + morpion2[3][1]# + morpion[3][0]
 	if somme2 == 3:
 		return 1
@@ -101,9 +101,9 @@ def Somme2(morpion2):
 	if somme2 == 3:
 		return 1
 	if somme2 == -3:
-		return -1    
+		return -1
 
-	somme2 = morpion2[1][1] + morpion2[2][2] + morpion2[3][3]  
+	somme2 = morpion2[1][1] + morpion2[2][2] + morpion2[3][3]
 
 	if somme2 == 3:
 		return 1
@@ -165,7 +165,7 @@ while continuer:
 		for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
 			if event.type == QUIT:     #Si un de ces événements est de type QUIT
 				menu = 0     #On arrête la boucle
-				continuer = 0 
+				continuer = 0
 			if event.type == MOUSEBUTTONDOWN and event.button == 1:
 				if 1<event.pos[1]<500:
 					jeu = 0
@@ -178,14 +178,14 @@ while continuer:
 				if 0<event.pos[1]<1:
 					continuer = 0
 					menu = 0
-                    
+
 		#fenetre.blit(fondcroix, (0,0))
 		fenetre.blit(fondmenu, (0,0))
-		fenetre.blit(joueur1, (50,320)) 
+		fenetre.blit(joueur1, (50,320))
 		fenetre.blit(joueur2, (570,320))
 		fenetre.blit(font.render("Start Game", 1, (255,255,255)), (330,723))
 		fenetre.blit(font.render("Morpion 4x4", 1, (255,255,255)), (330,140))
-		pygame.display.flip()  
+		pygame.display.flip()
 
 	#On initialise les variables du jeu
 	morpion1 = [[0,0,0],[0,0,0],[0,0,0]]
@@ -196,7 +196,7 @@ while continuer:
 		for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
 			if event.type == QUIT:     #Si un de ces événements est de type QUIT
 				jeu = 0      #On arrête la boucle
-				continuer = 0 
+				continuer = 0
 
 			#Recheche de la cible du clic
 			if event.type == MOUSEBUTTONDOWN and event.button == 1:
@@ -235,7 +235,7 @@ while continuer:
 		for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
 			if event.type == QUIT:     #Si un de ces événements est de type QUIT
 				fin = 0      #On arrête la boucle
-				continuer = 0 
+				continuer = 0
 			if event.type == MOUSEBUTTONDOWN and event.button == 1:
 				if 0<event.pos[0]<270:
 					jeu = 1
@@ -245,7 +245,7 @@ while continuer:
 					jeu = 0
 					fin = 0
 					menu = 1
-             
+
 
 		fenetre.blit(fondmenu, (0,0))
 		if somme == 1:
@@ -262,13 +262,13 @@ while continuer:
 	#On initialise les variables du jeu
 	morpion2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 	tour2 = 0
-        
+
 #Boucle infinie du jeu
 	while jeu1:
 		for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
 			if event.type == QUIT:     #Si un de ces événements est de type QUIT
 				jeu1 = 0      #On arrête la boucle
-				continuer1 = 0 
+				continuer1 = 0
 
 			#Recheche de la cible du clic
 			if event.type == MOUSEBUTTONDOWN and event.button == 1:
@@ -282,7 +282,7 @@ while continuer:
 								#On met la croix ou le rond en fonction du tour qui se joue
 								if signe == 0:
 									if tour2 % 2 == 0: #comptage des tours
-										morpion2[k][l]=1 
+										morpion2[k][l]=1
 									else:
 										morpion2[k][l]=-1
 									tour2 += 1
@@ -306,7 +306,7 @@ while continuer:
 		for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
 			if event.type == QUIT:     #Si un de ces événements est de type QUIT
 				fin1 = 0      #On arrête la boucle
-				continuer1 = 0 
+				continuer1 = 0
 			if event.type == MOUSEBUTTONDOWN and event.button == 1:
 				if 0<event.pos[0]<270:
 					jeu1 = 1
@@ -329,4 +329,3 @@ while continuer:
 		fenetre.blit(font.render("Menu", 1, (255,255,255)), (670,430))
 		fenetre.blit(font.render("Suivant", 1, (255,255,255)), (370,720))
 		pygame.display.flip()
-        
